@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#231b19" />
+      <stop offset="60%" stop-color="#181211" />
+      <stop offset="100%" stop-color="#0e0a09" />
+    </radialGradient>
+
+    <!-- Red Glow Filter for the Eye -->
+    <filter id="redEyeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur1" />
+      <feGaussianBlur stdDeviation="22" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Flame Gradient -->
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#E0262B" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#9A9DA1" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#EDEFF1" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="skullBone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#EDEFF1" />
+      <stop offset="100%" stop-color="#B8BAC0" />
+    </linearGradient>
+
+    <linearGradient id="skullShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#383332" />
+      <stop offset="100%" stop-color="#181211" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="96" fill="url(#bgGrad)" />
+
+  <!-- Outer subtle circular crimson aura -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#E0262B" stroke-width="2" opacity="0.25" stroke-dasharray="12 8" />
+
+  <!-- Flaming Crown / Tendrils behind skull -->
+  <g id="flames" opacity="0.9">
+    <!-- Center spire flame -->
+    <path d="M256 50 C265 90 290 130 270 170 C285 135 320 120 300 80 C330 115 340 160 325 200 C345 160 375 165 370 210 C360 175 390 190 380 230 C370 200 400 230 385 270 C365 240 360 270 340 280 C360 210 310 180 285 220 C290 160 240 120 256 50 Z" fill="url(#flameGrad)" />
+    <!-- Left mirrored/asymmetric flames -->
+    <path d="M256 50 C245 95 220 135 240 175 C225 140 190 125 210 85 C180 120 170 165 185 205 C165 165 135 170 140 215 C150 180 120 195 130 235 C140 205 110 235 125 275 C145 245 150 275 170 285 C150 215 200 185 225 225 C220 165 270 125 256 50 Z" fill="url(#flameGrad)" />
+    <!-- Rising ember wisps -->
+    <path d="M200 45 C190 70 215 90 205 110 C195 90 185 75 200 45 Z" fill="#E0262B" opacity="0.7" />
+    <path d="M312 45 C322 70 297 90 307 110 C317 90 327 75 312 45 Z" fill="#EDEFF1" opacity="0.6" />
+  </g>
+
+  <!-- Skull Structure -->
+  <g id="skull" transform="translate(0, 15)">
+    <!-- Skull Cranium Base -->
+    <path d="M256 120 
+             C175 120 145 175 145 235 
+             C145 275 160 310 185 330 
+             C190 350 195 375 205 385 
+             C215 392 230 395 240 395 
+             L240 430 C240 435 245 440 256 440 C267 440 272 435 272 430 
+             L272 395 
+             C282 395 297 392 307 385 
+             C317 375 322 350 327 330 
+             C352 310 367 275 367 235 
+             C367 175 337 120 256 120 Z" 
+          fill="url(#skullBone)" stroke="#9A9DA1" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Forehead Temples & Warrior Brow Line (Angular, Aggressive) -->
+    <path d="M170 215 L225 240 L256 230 L287 240 L342 215" fill="none" stroke="#231b19" stroke-width="6" stroke-linecap="round" />
+    <path d="M256 150 L256 220" fill="none" stroke="#9A9DA1" stroke-width="3" stroke-linecap="round" opacity="0.4" />
+    <path d="M220 170 L240 195" fill="none" stroke="#9A9DA1" stroke-width="2" opacity="0.5" />
+    <path d="M292 170 L272 195" fill="none" stroke="#9A9DA1" stroke-width="2" opacity="0.5" />
+
+    <!-- Eye Sockets (Deep angular cutouts) -->
+    <!-- Left Eye Socket (Dark void / steel shadow) -->
+    <path d="M180 250 C185 240 220 248 232 260 C238 275 230 305 212 312 C190 315 175 285 180 250 Z" fill="url(#skullShadow)" stroke="#383332" stroke-width="3" />
+    <!-- Left eye faint dead ash reflection -->
+    <circle cx="205" cy="280" r="4" fill="#9A9DA1" opacity="0.3" />
+
+    <!-- RIGHT EYE SOCKET - THE BLOOD RED EYE (THE LEGENDARY EYE) -->
+    <!-- Socket void -->
+    <path d="M332 250 C327 240 292 248 280 260 C274 275 282 305 300 312 C322 315 337 285 332 250 Z" fill="#181211" stroke="#E0262B" stroke-width="3" />
+    
+    <!-- Red Flaming Eye Core and Aura -->
+    <g filter="url(#redEyeGlow)">
+      <circle cx="304" cy="278" r="14" fill="#E0262B" />
+      <circle cx="304" cy="278" r="7" fill="#FF5C5C" />
+      <circle cx="305" cy="277" r="3" fill="#FFFFFF" />
+      <!-- Fire streak escaping the right eye -->
+      <path d="M312 270 Q340 240 330 205 Q350 230 325 265 Z" fill="#E0262B" opacity="0.85" />
+    </g>
+
+    <!-- Nasal Cavity (Angular inverted dagger/heart) -->
+    <path d="M256 290 L246 325 L252 335 L256 330 L260 335 L266 325 Z" fill="#181211" stroke="#383332" stroke-width="2" />
+
+    <!-- Cheekbone Cutouts & Shadow -->
+    <path d="M152 280 L180 325 L190 355" fill="none" stroke="#231b19" stroke-width="5" stroke-linecap="round" />
+    <path d="M360 280 L332 325 L322 355" fill="none" stroke="#231b19" stroke-width="5" stroke-linecap="round" />
+
+    <!-- Maxilla & Teeth / Jaw -->
+    <g id="teeth" fill="#EDEFF1" stroke="#181211" stroke-width="2.5">
+      <!-- Upper Teeth -->
+      <rect x="220" y="370" width="10" height="15" rx="2" />
+      <rect x="232" y="368" width="11" height="18" rx="2" />
+      <rect x="245" y="367" width="11" height="19" rx="2" />
+      <rect x="258" y="367" width="11" height="19" rx="2" />
+      <rect x="271" y="368" width="11" height="18" rx="2" />
+      <rect x="284" y="370" width="10" height="15" rx="2" />
+
+      <!-- Lower Teeth / Jaw line -->
+      <rect x="225" y="390" width="10" height="14" rx="2" />
+      <rect x="237" y="390" width="10" height="16" rx="2" />
+      <rect x="249" y="390" width="14" height="16" rx="2" />
+      <rect x="265" y="390" width="10" height="16" rx="2" />
+      <rect x="277" y="390" width="10" height="14" rx="2" />
+    </g>
+  </g>
+
+  <!-- Sharp Angular Framing Accents (Warrior Crosshairs) -->
+  <path d="M40 70 L40 40 L70 40" fill="none" stroke="#E0262B" stroke-width="4" stroke-linecap="square" />
+  <path d="M472 70 L472 40 L442 40" fill="none" stroke="#E0262B" stroke-width="4" stroke-linecap="square" />
+  <path d="M40 442 L40 472 L70 472" fill="none" stroke="#E0262B" stroke-width="4" stroke-linecap="square" />
+  <path d="M472 442 L472 472 L442 472" fill="none" stroke="#E0262B" stroke-width="4" stroke-linecap="square" />
+
+  <!-- Bottom Runemark Banner Text -->
+  <text x="256" y="482" 
+        text-anchor="middle" 
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+        font-size="20" 
+        font-weight="900" 
+        letter-spacing="9" 
+        fill="#EDEFF1">BONE BREAKER</text>
+</svg>

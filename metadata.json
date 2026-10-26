@@ -1,0 +1,6 @@
+{
+  "name": "BONE BREAKER",
+  "description": "Personal self-improvement warrior dashboard: habit tracking, task management, tactical calendar, notes, and AI coach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
