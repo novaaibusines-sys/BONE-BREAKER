@@ -1,0 +1,4 @@
+# SPA fallback for Cloudflare Pages.
+# Unknown paths serve index.html so refreshes and deep links do not 404.
+# Pages Functions (e.g. /api/coach) are matched before this rule.
+/*    /index.html   200
